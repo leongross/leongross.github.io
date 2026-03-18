@@ -1,13 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
+<!-- stolen and adjusted from https://www.kernel.org/pub/test, thx @micgor32 -->
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>leongross.github.com</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=4" />
+  <title>leongross.github.io</title>
+  <style>
+    body {
+      background-color: #000;
+      color: #39FF14;
+      font-family: monospace;
+      margin: 0;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      white-space: pre-wrap;
+    }
+
+    .blinking-cursor {
+      display: inline-block;
+      background-color: #39FF14;
+      width: 8px;
+      height: 18px;
+      vertical-align: bottom;
+      animation: blink 1s steps(1, end) infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        background-color: transparent;
+      }
+    }
+  </style>
 </head>
 
 <body>
-    <h1>leongross.github.com</h1>
+  <div class="container">
+    <pre>
+      ================================================================================
+      leongross.github.io
+      ================================================================================
+      CPU: 0 PID: 31337 Comm: page fault Not tainted 2.0.0 #1
+      Hardware name: github.io
+
+      RIP: 0010:locate_elite_haxX0r+0x31337/0xdeadbeef
+      Code: Bad address at /resume
+      Modules linked in:
+       - rust
+       - c
+       - golang
+       - leongross.github.io/blog
+       - gif_memes
+
+      Process browser (pid: 101, stack limit = 0x7ffc2026)
+      Stack:
+        0x63746640 0x666c7578 0x66696e67 0x6572733b
+        0x756e6940 0x7275623b 0x776f726b 0x40396573
+        0x65630000
+
+      CPU Registers:
+       EAX: 0x0000000b EBX: 0x7ffcdead ECX: 0x7ffcb33f
+       EDX: 0x00000000 ESI: 0x41414141 EDI: 0x41414141
+       EIP: Segmentation Fault: tried to dereference resume
+
+      CR2: 0000000000000000
+      ---[ end trace resume ]---
+      Kernel panic: Attempted to fetch bloated web page
+
+      Suggested Actions:
+       - Contact me via mailto:leon.gross[AT]9esec.io
+       - Check out my code at https://github.com/leongross
+       - Find peace in writing firmware in rust
+
+      _[ Press any key to &lt;3 open source firmware ]_ </pre>
+    <div class="blinking-cursor"></div>
+  </div>
 </body>
 
 </html>
